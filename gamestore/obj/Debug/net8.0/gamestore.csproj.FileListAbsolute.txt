@@ -23,3 +23,10 @@ C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\refint\gamest
 C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.pdb
 c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.genruntimeconfig.cache
 c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\ref\gamestore.dll
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\FluentValidation.dll
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.csproj.AssemblyReference.cache
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.sourcelink.json
+c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\obj\Debug\net8.0\gamestore.csproj.Up2Date

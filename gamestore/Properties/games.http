@@ -8,7 +8,7 @@ POST http://localhost:5218/games
 Content-Type: application/json
 
 {
-    "Name" : "Minecraft",
+    "Name" : "Minecraft III",
     "Genre" : " Kids and Family",
     "price" : 10.24,
     "ReleaseDate" : "2015-11-30"
@@ -19,7 +19,7 @@ PUT http://localhost:5218/games/5
 Content-Type: application/json
 
 {
-    "Name" : "Minecraft II",
+   "Name" : "Minecraft Me",
     "Genre" : " Kids and Family",
     "price" : 15.24,
     "ReleaseDate" : "2015-11-30"
