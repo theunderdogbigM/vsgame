@@ -3,6 +3,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using gamestore.DTOs;
 using gamestore.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 internal class Program
@@ -15,15 +16,19 @@ internal class Program
         builder.Services.AddSqlite<GamestoreDBContext>(connString);
 
 
-        builder.Services.AddFluentValidationAutoValidation();
-        builder.Services.AddValidatorsFromAssemblyContaining<CreateGameDTOValidator>(); // Replace 'Validations' with the correct class if necessary
+        builder.Services.AddDbContext<GamestoreDBContext>(options =>
+        options.UseSqlite("Data Source=gamestore.db")
+           .EnableSensitiveDataLogging());
 
+
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateGameDTOValidator>();
         var app = builder.Build();
 
        
         app.MapGamesEndPoints();
 
-        
+        app.MigrateDb();
         app.Run();
     }
 }

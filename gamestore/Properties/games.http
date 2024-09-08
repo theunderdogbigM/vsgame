@@ -1,26 +1,26 @@
 GET http://localhost:5218/games
 ###
 
-GET http://localhost:5218/games/5
+GET http://localhost:5218/games/1
 
 ###
 POST http://localhost:5218/games
 Content-Type: application/json
 
 {
-    "Name" : "Minecraft III",
-    "Genre" : " Kids and Family",
-    "price" : 10.24,
+    "Name" : "StreetFighter I",
+    "GenreId" : 1,
+    "price" : 17.24,
     "ReleaseDate" : "2015-11-30"
 }
 
 ###
-PUT http://localhost:5218/games/5
+PUT http://localhost:5218/games/1
 Content-Type: application/json
 
 {
    "Name" : "Minecraft Me",
-    "Genre" : " Kids and Family",
+    "GenreId" : 2,
     "price" : 15.24,
     "ReleaseDate" : "2015-11-30"
 }
@@ -28,4 +28,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:5218/games/1
+DELETE http://localhost:5218/games/2

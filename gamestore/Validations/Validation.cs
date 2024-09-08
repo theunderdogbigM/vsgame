@@ -10,7 +10,7 @@ public class CreateGameDTOValidator : AbstractValidator<CreateGameDTO>
             .NotEmpty()
             .WithMessage("Name is required.");
 
-        RuleFor(item => item.Genre)
+        RuleFor(item => item.GenreId)
             .NotEmpty()
             .WithMessage("Genre is required.");
 
