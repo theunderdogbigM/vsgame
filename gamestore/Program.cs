@@ -4,11 +4,12 @@ using FluentValidation.AspNetCore;
 using gamestore.DTOs;
 using gamestore.Data;
 using Microsoft.EntityFrameworkCore;
+using gamestore.Entities;
 
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -27,8 +28,9 @@ internal class Program
 
        
         app.MapGamesEndPoints();
+        app.MapGenreEndpoints();
 
-        app.MigrateDb();
+        await app.MigrateDbAsync();
         app.Run();
     }
 }

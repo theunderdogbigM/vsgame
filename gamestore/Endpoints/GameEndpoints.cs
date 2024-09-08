@@ -17,16 +17,16 @@ public static class GameEndpoints
     {
         var group = app.MapGroup("games");
 
-        group.MapGet("/", (GamestoreDBContext dBContext) =>
-        dBContext.Games.Include(game=>game.Genre)
-        .Select(game => game.ToGameSummaryDto()).AsNoTracking()
+        group.MapGet("/", async (GamestoreDBContext dBContext) =>
+        await dBContext.Games.Include(game=>game.Genre)
+        .Select(game => game.ToGameSummaryDto()).AsNoTracking().ToListAsync()
         );
 
 
 
-        group.MapGet("/{id}", (int id, GamestoreDBContext dBContext) => 
+        group.MapGet("/{id}", async (int id, GamestoreDBContext dBContext) => 
         {
-            Game? game = dBContext.Games.Find(id);
+            Game? game = await dBContext.Games.FindAsync(id);
             return game is null ? Results.NotFound() : Results.Ok(game.ToGameDetailsDto());
         })
         .WithName(GameEndpointName);
@@ -37,7 +37,7 @@ public static class GameEndpoints
 
 
 
-        group.MapPost("/", (CreateGameDTO newGame, GamestoreDBContext dbContext, IValidator<CreateGameDTO> validator) =>
+        group.MapPost("/", async (CreateGameDTO newGame, GamestoreDBContext dbContext, IValidator<CreateGameDTO> validator) =>
         {
             var validationResult = validator.Validate(newGame);
             if (!validationResult.IsValid)
@@ -50,7 +50,7 @@ public static class GameEndpoints
               
 
             dbContext.Games.Add(game);
-            dbContext.SaveChanges();
+           await dbContext.SaveChangesAsync();
             return Results.CreatedAtRoute(GameEndpointName, new { id = game.Id }, game.ToGameDetailsDto());
         });
 
@@ -58,7 +58,7 @@ public static class GameEndpoints
 
 
 
-        group.MapPut("/{id}", (int id, UpdateGameDTO updateGame, IValidator<UpdateGameDTO> validator, GamestoreDBContext dbContext) =>
+        group.MapPut("/{id}", async (int id, UpdateGameDTO updateGame, IValidator<UpdateGameDTO> validator, GamestoreDBContext dbContext) =>
     {
    
     var validationResult = validator.Validate(updateGame);
@@ -70,7 +70,7 @@ public static class GameEndpoints
     }
     
     
-    var existingGame = dbContext.Games.Find(id);
+    var existingGame = await dbContext.Games.FindAsync(id);
 
     if (existingGame == null)
     {
@@ -80,7 +80,7 @@ public static class GameEndpoints
   dbContext.Entry(existingGame).
   CurrentValues.SetValues(updateGame.ToEntity(id));
 
-  dbContext.SaveChanges();
+ await dbContext.SaveChangesAsync();
 
     return Results.NoContent();
 });
