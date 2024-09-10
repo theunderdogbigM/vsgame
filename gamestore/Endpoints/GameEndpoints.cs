@@ -13,21 +13,27 @@ namespace gamestore.Endpoints
 
         public static void MapGamesEndPoints(this WebApplication app)
         {
-            app.MapGet("/games", async (GamestoreDBContext dBContext) =>
+            // Create a route group for "games"
+            var group = app.MapGroup("/games");
+
+            // GET /games - Retrieve a list of games
+            group.MapGet("/", async (GamestoreDBContext dBContext) =>
                 await dBContext.Games.Include(game => game.Genre)
                     .Select(game => game.ToGameSummaryDto())
                     .AsNoTracking()
                     .ToListAsync()
             );
 
-            app.MapGet("/games/{id}", async (int id, GamestoreDBContext dBContext) =>
+            // GET /games/{id} - Retrieve a game by ID
+            group.MapGet("/{id}", async (int id, GamestoreDBContext dBContext) =>
             {
                 var game = await dBContext.Games.FindAsync(id);
                 return game == null ? Results.NotFound() : Results.Ok(game.ToGameDetailsDto());
             })
             .WithName(GameEndpointName);
 
-            app.MapPost("/games", async (CreateGameDTO newGame, GamestoreDBContext dbContext, IValidator<CreateGameDTO> validator) =>
+            // POST /games - Create a new game
+            group.MapPost("/", async (CreateGameDTO newGame, GamestoreDBContext dbContext, IValidator<CreateGameDTO> validator) =>
             {
                 var validationResult = validator.Validate(newGame);
                 if (!validationResult.IsValid)
@@ -41,7 +47,8 @@ namespace gamestore.Endpoints
                 return Results.CreatedAtRoute(GameEndpointName, new { id = game.Id }, game.ToGameDetailsDto());
             });
 
-            app.MapPut("/games/{id}", async (int id, UpdateGameDTO updateGame, IValidator<UpdateGameDTO> validator, GamestoreDBContext dbContext) =>
+            // PUT /games/{id} - Update an existing game
+            group.MapPut("/{id}", async (int id, UpdateGameDTO updateGame, IValidator<UpdateGameDTO> validator, GamestoreDBContext dbContext) =>
             {
                 var validationResult = validator.Validate(updateGame);
                 if (!validationResult.IsValid)
@@ -60,7 +67,8 @@ namespace gamestore.Endpoints
                 return Results.NoContent();
             });
 
-            app.MapDelete("/games/{id}", async (int id, GamestoreDBContext dbContext) =>
+            // DELETE /games/{id} - Delete a game by ID
+            group.MapDelete("/{id}", async (int id, GamestoreDBContext dbContext) =>
             {
                 var game = await dbContext.Games.FindAsync(id);
                 if (game == null)

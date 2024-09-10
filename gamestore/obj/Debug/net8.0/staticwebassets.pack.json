@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\create.html"
     },
     {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.html",
+      "PackagePath": "staticwebassets\\edit.html"
+    },
+    {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.js",
+      "PackagePath": "staticwebassets\\edit.js"
+    },
+    {
       "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripts.js",
+      "PackagePath": "staticwebassets\\scripts.js"
     },
     {
       "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styles.css",
