@@ -5,11 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store</title>
     <link rel="stylesheet" href="styles.css">
+    <style>.shape {
+        position: absolute;
+        background: rgba(231, 23, 23, 0.5);
+        border-radius: 50%;
+        animation: float 10s ease-in-out infinite;
+        pointer-events: none;
+    }
+    
+    .shape:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 15%;
+        animation-duration: 7s;
+    }
+    
+    .shape:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        top: 75%;
+        left: 80%;
+        animation-duration: 5s;
+    }
+    
+    .shape:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        top: 40%;
+        left: 50%;
+        animation-duration: 10s;
+    }</style>
 </head>
 <body>
     <div class="container">
+
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
         <h1>Game Store</h1>
         <a href="create.html" class="create-button">Create Game</a>
+       
         <table>
             <thead>
                 <tr>
@@ -25,7 +61,10 @@
                 <!-- Rows will be populated dynamically with JavaScript -->
             </tbody>
         </table>
+
+        
     </div>
     <script src="scripts.js"></script>
+   
 </body>
 </html>
