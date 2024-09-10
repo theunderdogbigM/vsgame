@@ -1,10 +1,8 @@
-using gamestore.Endpoints;
-using FluentValidation;
 using FluentValidation.AspNetCore;
-using gamestore.DTOs;
 using gamestore.Data;
+using gamestore.DTOs;
+using gamestore.Endpoints;
 using Microsoft.EntityFrameworkCore;
-using gamestore.Entities;
 
 internal class Program
 {
@@ -12,36 +10,38 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Register services
-        builder.Services.AddRazorPages();
-
+        // Register services for database and validation
         var connString = builder.Configuration.GetConnectionString("gamestore");
         builder.Services.AddSqlite<GamestoreDBContext>(connString);
 
-        builder.Services.AddFluentValidationAutoValidation();
-        builder.Services.AddValidatorsFromAssemblyContaining<CreateGameDTOValidator>();
+        // Register FluentValidation services
+        builder.Services.AddFluentValidation(fv => 
+        {
+            fv.RegisterValidatorsFromAssemblyContaining<CreateGameDTOValidator>();
+        });
 
         // Build the app
         var app = builder.Build();
 
-        // Configure middleware pipeline
-        app.UseHttpsRedirection();
+        // Middleware: Serve static files from wwwroot
         app.UseStaticFiles();
 
+        // Middleware: Enable routing for the application
         app.UseRouting();
-        app.UseAuthorization();
 
-        // Map Razor Pages
-        app.MapRazorPages();
-
-        // Map your existing endpoints
+        // Middleware: Configure endpoints
         app.MapGamesEndPoints();
-        app.MapGenreEndpoints();
+
+        // Serve welcome.html at the root URL
+        app.MapGet("/", async context =>
+        {
+            await context.Response.SendFileAsync("wwwroot/welcome.html");
+        });
 
         // Apply any pending migrations and create the database if it doesn't exist
         await app.MigrateDbAsync();
 
-        // Run the app
+        // Run the WebApplication
         app.Run();
     }
 }
