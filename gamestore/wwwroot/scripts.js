@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('/games')
             .then(response => response.json())
             .then(data => {
+                console.log(data); // Add this line to inspect the response in the console
                 const tableBody = document.getElementById('gameTableBody');
                 tableBody.innerHTML = '';
                 data.forEach(game => {
-                    // Attempt to parse releaseDate as a date and format it, fallback to 'N/A'
-                    const releaseDate = game.releaseDate ? new Date(game.releaseDate).toISOString().split('T')[0] : 'N/A';
+                    const releaseDate = game.releaseDate || 'N/A';
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${game.id}</td>
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tableBody.appendChild(row);
                 });
             })
+            
             .catch(error => {
                 console.error('Error fetching games:', error);
             });

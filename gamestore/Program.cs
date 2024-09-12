@@ -20,24 +20,32 @@ internal class Program
             fv.RegisterValidatorsFromAssemblyContaining<CreateGameDTOValidator>();
         });
 
+
+ builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+    });
+
         // Build the app
         var app = builder.Build();
+       
+
 
         // Middleware: Serve static files from wwwroot
+        DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+        defaultFilesOptions.DefaultFileNames.Clear();
+        defaultFilesOptions.DefaultFileNames.Add("/welcome.html");
+        app.UseDefaultFiles(defaultFilesOptions);
         app.UseStaticFiles();
-
+        
+    
         // Middleware: Enable routing for the application
         app.UseRouting();
 
         // Middleware: Configure endpoints
         app.MapGamesEndPoints();
-
-        // Serve welcome.html at the root URL
-        app.MapGet("/", async context =>
-        {
-            await context.Response.SendFileAsync("wwwroot/welcome.html");
-        });
-
+        
         // Apply any pending migrations and create the database if it doesn't exist
         await app.MigrateDbAsync();
 

@@ -8977,7 +8977,8 @@
       "FluentValidation.AspNetCore >= 11.3.0",
       "Microsoft.AspNetCore.Mvc.Razor >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.8"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.8",
+      "System.Text.Json >= 8.0.4"
     ]
   },
   "packageFolders": {
@@ -9045,6 +9046,10 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[8.0.8, )"
+          },
+          "System.Text.Json": {
+            "target": "Package",
+            "version": "[8.0.4, )"
           }
         },
         "imports": [
