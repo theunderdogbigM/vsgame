@@ -1,31 +1,40 @@
-GET http://localhost:5218/games
+### Get All Games
+GET https://localhost:5218/games
+Accept: application/json
+
 ###
 
-GET http://localhost:5218/games/1
+### Get a Game by ID
+GET https://localhost:5218/games/1
+Accept: application/json
 
 ###
-POST http://localhost:5218/games
+
+### Create a New Game
+POST https://localhost:5218/games
 Content-Type: application/json
 
 {
-    "Name" : "StreetFighter I",
-    "GenreId" : 1,
-    "price" : 17.24,
-    "ReleaseDate" : "2015-11-30"
+    "Name": "StreetFighter I",
+    "GenreId": 1,
+    "Price": 17.24,
+    "ReleaseDate": "2015-11-30"
 }
 
 ###
-PUT http://localhost:5218/games/1
+
+### Update an Existing Game
+PUT https://localhost:5218/games/2
 Content-Type: application/json
 
 {
-   "Name" : "Minecraft Me",
-    "GenreId" : 2,
-    "price" : 15.24,
-    "ReleaseDate" : "2015-11-30"
+    "Name": "Minecraft Me",
+    "GenreId": 2,
+    "Price": 15.24,
+    "ReleaseDate": "2015-11-30"
 }
 
-
-
 ###
-DELETE http://localhost:5218/games/2
+
+### Delete a Game
+DELETE https://localhost:5218/games/2
