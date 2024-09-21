@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj": {}
+    "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj": {
+    "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj",
+        "projectUniqueName": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj",
         "projectName": "gamestore",
-        "projectPath": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj",
+        "projectPath": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\gamestore.csproj",
         "packagesPath": "C:\\Users\\eva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\obj\\",
+        "outputPath": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

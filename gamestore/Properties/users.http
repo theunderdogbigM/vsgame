@@ -1,0 +1,27 @@
+###
+GET https://localhost:5218/users
+Accept: application/json
+###
+GET https://localhost:5218/users/1
+Accept: application/json
+###
+
+POST https://localhost:5218/users
+Content-Type: application/json
+
+{
+    "Name": "Toni",
+    "Email": "tonibeloni@cats.org",
+    "Passwor": "Miaw",
+}
+###
+PUT https://localhost:5218/users/1
+Content-Type: application/json
+
+{
+    "Name": "Toniiiiii",
+    "Email": "tonibeloni@cats.org",
+    "Passwor": "Miaw",
+}
+###
+DELETE https://localhost:5218/users/1

@@ -34,7 +34,13 @@
             animation: bounceIn 1s ease-in-out;
         }
 
-        .start-button {
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .button {
             display: inline-block;
             padding: 15px 30px;
             font-size: 18px;
@@ -47,9 +53,11 @@
             text-decoration: none;
             transition: transform 0.3s ease, background-color 0.3s ease;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            text-align: center;
         }
 
-        .start-button:hover {
+        .button:hover {
             background-color: #0056b3;
             transform: scale(1.1);
         }
@@ -77,7 +85,7 @@
             }
         }
 
-        /* Add some floating shapes */
+        /* Floating shapes for visual effect */
         .shape {
             position: absolute;
             background: rgba(255, 255, 255, 0.5);
@@ -126,7 +134,10 @@
 <body>
     <div class="container">
         <div class="welcome-message">Welcome to the Game Store!</div>
-        <a href="index.html" class="start-button">Start</a>
+        <div class="button-container">
+            <a href="index.html" class="button">Start</a> <!-- Existing Start Button -->
+            <a href="createUser.html" class="button">Sign Up</a> <!-- New Sign Up Button -->
+        </div>
     </div>
 
     <!-- Floating shapes for visual effect -->

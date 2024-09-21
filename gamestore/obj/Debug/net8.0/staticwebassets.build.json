@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3EyNEOeLgKdnNkE17u8zXJcW4agfIywLOUcrNmh44ag=",
+  "Hash": "bxLJIcSABOwMaLevj4Jv6L7gyMe0H6mC5V/hrHu6VB0=",
   "Source": "gamestore",
   "BasePath": "_content/gamestore",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "gamestore\\wwwroot",
       "Source": "gamestore",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\create.html",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\create.html",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "create.html",
       "AssetKind": "All",
@@ -36,10 +36,29 @@
       "OriginalItemSpec": "wwwroot\\create.html"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.html",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\createUser.html",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "BasePath": "_content/gamestore",
+      "RelativePath": "createUser.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\createUser.html"
+    },
+    {
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.html",
+      "SourceId": "gamestore",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "edit.html",
       "AssetKind": "All",
@@ -55,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\edit.html"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.js",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.js",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "edit.js",
       "AssetKind": "All",
@@ -74,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\edit.js"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\index.html",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\index.html",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -93,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripts.js",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripts.js",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "scripts.js",
       "AssetKind": "All",
@@ -112,10 +131,29 @@
       "OriginalItemSpec": "wwwroot\\scripts.js"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styles.css",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripttwo.js",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "BasePath": "_content/gamestore",
+      "RelativePath": "scripttwo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripttwo.js"
+    },
+    {
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styles.css",
+      "SourceId": "gamestore",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "styles.css",
       "AssetKind": "All",
@@ -131,10 +169,29 @@
       "OriginalItemSpec": "wwwroot\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\welcome.html",
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styletwo.css",
       "SourceId": "gamestore",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
+      "BasePath": "_content/gamestore",
+      "RelativePath": "styletwo.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styletwo.css"
+    },
+    {
+      "Identity": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\welcome.html",
+      "SourceId": "gamestore",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\",
       "BasePath": "_content/gamestore",
       "RelativePath": "welcome.html",
       "AssetKind": "All",

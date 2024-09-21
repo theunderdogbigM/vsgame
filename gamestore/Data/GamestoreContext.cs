@@ -9,6 +9,8 @@ namespace gamestore.Data
         public DbSet<Game> Games => Set<Game>();
         public DbSet<GenreType> Genre => Set<GenreType>();
 
+        public DbSet<User> User => Set<User>();
+
         public GamestoreDBContext(DbContextOptions<GamestoreDBContext> options) : base(options)
         {
         }
@@ -24,6 +26,16 @@ namespace gamestore.Data
                 new {Id = 4, Name = "RPG"},
                 new {Id = 5, Name = "Quests"}
             );
+
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
         }
+
+
+        public DbSet<User> Users { get; set; }
+
+    
     }
 }

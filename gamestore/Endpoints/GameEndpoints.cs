@@ -1,7 +1,6 @@
 using gamestore.DTOs;
 using FluentValidation;
 using gamestore.Data;
-using gamestore.Entities;
 using gamestore.Mapping;
 using Microsoft.EntityFrameworkCore;
 

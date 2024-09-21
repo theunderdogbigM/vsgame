@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using gamestore.CreateUserValidator;
 using gamestore.Data;
 using gamestore.DTOs;
 using gamestore.Endpoints;
@@ -18,34 +19,46 @@ internal class Program
         builder.Services.AddFluentValidation(fv => 
         {
             fv.RegisterValidatorsFromAssemblyContaining<CreateGameDTOValidator>();
+            fv.RegisterValidatorsFromAssemblyContaining<CreateUserDtoValidator>();
         });
 
-
- builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
-    });
+        // Configure JSON options
+        builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+            });
 
         // Build the app
         var app = builder.Build();
-       
 
+        // Exception handling for development/production
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Error");
+            app.UseHsts();
+        }
 
-        // Middleware: Serve static files from wwwroot
+        // Middleware: Redirect HTTP to HTTPS and serve static files
+        app.UseHttpsRedirection();
+
         DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
         defaultFilesOptions.DefaultFileNames.Clear();
         defaultFilesOptions.DefaultFileNames.Add("/welcome.html");
         app.UseDefaultFiles(defaultFilesOptions);
         app.UseStaticFiles();
-        
-    
+
         // Middleware: Enable routing for the application
         app.UseRouting();
 
-        // Middleware: Configure endpoints
+        // Map endpoints
+        app.MapUserEndpoints();
         app.MapGamesEndPoints();
-        
+
         // Apply any pending migrations and create the database if it doesn't exist
         await app.MigrateDbAsync();
 
@@ -53,3 +66,4 @@ internal class Program
         app.Run();
     }
 }
+

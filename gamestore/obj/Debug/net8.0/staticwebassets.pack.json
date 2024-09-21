@@ -1,31 +1,43 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\create.html",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\create.html",
       "PackagePath": "staticwebassets\\create.html"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.html",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\createUser.html",
+      "PackagePath": "staticwebassets\\createUser.html"
+    },
+    {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.html",
       "PackagePath": "staticwebassets\\edit.html"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.js",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\edit.js",
       "PackagePath": "staticwebassets\\edit.js"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\index.html",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripts.js",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripts.js",
       "PackagePath": "staticwebassets\\scripts.js"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styles.css",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\scripttwo.js",
+      "PackagePath": "staticwebassets\\scripttwo.js"
+    },
+    {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styles.css",
       "PackagePath": "staticwebassets\\styles.css"
     },
     {
-      "Id": "C:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\welcome.html",
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\styletwo.css",
+      "PackagePath": "staticwebassets\\styletwo.css"
+    },
+    {
+      "Id": "c:\\Users\\eva\\Desktop\\.NetProject\\vsgame\\gamestore\\wwwroot\\welcome.html",
       "PackagePath": "staticwebassets\\welcome.html"
     },
     {
