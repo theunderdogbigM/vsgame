@@ -25,7 +25,7 @@ namespace gamestore.Endpoints
             group.MapGet("/", async (GamestoreDBContext dbContext) =>
                 await dbContext.User
                     .AsNoTracking()
-                    .Select(user => user.ToUserSummary())
+                    .Select(user => user.ToUserDetails())
                     .ToListAsync()
             );
 
@@ -76,19 +76,18 @@ namespace gamestore.Endpoints
                 return Results.NoContent();
             });
 
-            // Delete user
-            group.MapDelete("/{id}", async (int id, GamestoreDBContext dbContext) =>
-            {
-                var existingUser = await dbContext.User.FindAsync(id);
-                if (existingUser == null)
-                {
-                    return Results.NotFound();
-                }
+           group.MapDelete("/{id}", async (int id, GamestoreDBContext dbContext) =>
+{
+    var existingUser = await dbContext.User.FindAsync(id);
+    if (existingUser == null)
+    {
+        return Results.NotFound();
+    }
 
-                dbContext.User.Remove(existingUser);
-                await dbContext.SaveChangesAsync();
-                return Results.NoContent();
-            });
+    dbContext.User.Remove(existingUser);
+    await dbContext.SaveChangesAsync();
+    return Results.NoContent();
+});
 
 
 
@@ -171,30 +170,30 @@ group.MapPost("/signin", async (SignInDto signInDto, GamestoreDBContext dbContex
 });
 
 
+}
 
-        }
+private static string GenerateToken(User user)
+{
+    var claims = new[]
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+        new Claim("UserId", user.Id.ToString()), // Include UserId in the claims
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
-        private static string GenerateToken(User user)
-        {
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperLongSecretKeyForJWTGeneration123!")); // Use a secure key
+    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperLongSecretKeyForJWTGeneration123!"));
- // Use a secure key
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+    var token = new JwtSecurityToken(
+        issuer: "YourIssuer",
+        audience: "YourAudience",
+        claims: claims,
+        expires: DateTime.Now.AddMinutes(30),
+        signingCredentials: creds);
 
-            var token = new JwtSecurityToken(
-                issuer: "YourIssuer",
-                audience: "YourAudience",
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds);
+    return new JwtSecurityTokenHandler().WriteToken(token);
+}
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
 
         private static bool IsPasswordHashed(string password)
 {
