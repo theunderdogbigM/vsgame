@@ -13,7 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('releaseDate').value = data.releaseDate;
             });
     }
+    function logoutUser() {
+        // Remove the token from localStorage
+        localStorage.removeItem('authToken');
 
+        // Optionally, redirect to the login page or home page
+        window.location.href = 'welcome.html';
+    }
+
+    // Attach the event listener to the logout button
+    document.getElementById('logoutButton').addEventListener('click', logoutUser);
     document.getElementById('editForm').addEventListener('submit', (event) => {
         event.preventDefault();
 

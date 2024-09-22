@@ -3,6 +3,7 @@ using gamestore.CreateUserValidator;
 using gamestore.Data;
 using gamestore.DTOs;
 using gamestore.Endpoints;
+using gamestore.Security;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -55,6 +56,31 @@ internal class Program
         // Middleware: Enable routing for the application
         app.UseRouting();
 
+        // Token validation middleware
+        app.Use(async (context, next) =>
+        {
+            // Resolve the GamestoreDBContext within the scope of the request
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<GamestoreDBContext>();
+
+                var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    var isBlacklisted = await dbContext.BlacklistedTokens.AnyAsync(bt => bt.Token == token);
+                    if (isBlacklisted)
+                    {
+                        context.Response.StatusCode = 401; // Unauthorized
+                        await context.Response.WriteAsync("Token has been invalidated.");
+                        return;
+                    }
+                }
+            }
+
+            await next.Invoke();
+        });
+
         // Map endpoints
         app.MapUserEndpoints();
         app.MapGamesEndPoints();
@@ -66,4 +92,3 @@ internal class Program
         app.Run();
     }
 }
-

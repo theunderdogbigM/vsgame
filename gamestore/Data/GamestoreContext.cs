@@ -1,5 +1,6 @@
 using gamestore.Entities;
 using gamestore.Genre;
+using gamestore.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace gamestore.Data
@@ -11,6 +12,7 @@ namespace gamestore.Data
 
         public DbSet<User> User => Set<User>();
 
+         public DbSet<BlacklistedToken> BlacklistedTokens { get; set; }
         public GamestoreDBContext(DbContextOptions<GamestoreDBContext> options) : base(options)
         {
         }

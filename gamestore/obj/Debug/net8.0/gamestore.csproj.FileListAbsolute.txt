@@ -133,3 +133,11 @@ c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Newtonsoft.Js
 c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\System.Security.Permissions.dll
 c:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\gamestore.staticwebassets.runtime.json
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\eva\Desktop\.NetProject\vsgame\gamestore\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

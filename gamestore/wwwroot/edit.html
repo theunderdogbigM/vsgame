@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="logoutButton">Log Out</button>
     <div class="container">
         <h1>Edit Game</h1>
         <form id="editForm">
@@ -27,5 +28,15 @@
         </form>
     </div>
     <script src="edit.js"></script>
+    <script>function logoutUser() {
+        // Remove the token from localStorage
+        localStorage.removeItem('authToken');
+
+        // Optionally, redirect to the login page or home page
+        window.location.href = 'welcome.html';
+
+         // Attach the event listener to the logout button
+    document.getElementById('logoutButton').addEventListener('click', logoutUser);
+    }</script>
 </body>
 </html>
